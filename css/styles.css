@@ -4,6 +4,12 @@ body {
     overflow-x: hidden;
 }
 
+.nav-item.d-flex.justify-content-end {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
 .header {
     width: auto;
     max-width: auto;
