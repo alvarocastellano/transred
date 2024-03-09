@@ -8,8 +8,8 @@ body {
     display: flex;
     justify-content: flex-end;
   }
-  
 
+  
 .header {
     width: auto;
     max-width: auto;
@@ -36,6 +36,11 @@ body {
     background-color: #9b9999;
     border-radius: 8px;
 }
+
+li.list-group-item:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
+}
+
 
 .image_notification {
     width: 4%;
