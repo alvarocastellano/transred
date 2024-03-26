@@ -9,6 +9,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
   <title>Transred</title>
   <link rel="icon" href="images/tr (1).png" type="image/x-icon">
   <link rel="shortcut icon" href="images/tr (1).png" type="image/x-icon">
@@ -19,12 +20,26 @@
     .bg-custom-gray {
       background-color: #dedede;
     }
+
+      /* Establece una altura mínima para todas las imágenes del carrusel */
+  .carousel-item img {
+    min-height: 150px; /* Ajusta la altura mínima según tus necesidades */
+    width: auto; /* Permite que el ancho se ajuste automáticamente para mantener la proporción */
+    margin-top:5%;
+  }
+
+  /* Establece la posición fija para las flechas del carrusel */
+  .carousel-control-fixed {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Asegura que las flechas estén por encima del contenido */
+  }
   </style>
 
 </head>
 
 <body>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <nav class="navbar navbar-expand-lg navbar-light bg-custom-gray">
 
@@ -100,31 +115,30 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 order-1 order-md-2">
-
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" style="margin-top:3%;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="images/ammega.png" class="d-block mx-auto w-50" alt="Ammega">
+            <a href="https://www.ammega.com/" target="_blank"><img src="images/ammega.png" class="d-block mx-auto w-50" alt="Ammega"></a>
           </div>
           <div class="carousel-item">
-            <img src="images/renold.png" class="d-block mx-auto w-50" alt="Renold">
+            <a href="https://www.renold.es/" target="_blank"><img src="images/renold.png" class="d-block mx-auto w-50" alt="Renold"></a>
           </div>
           <div class="carousel-item">
-            <img src="images/cellumation.png" class="d-block mx-auto w-50" alt="Cellumation">
+            <a href="https://cellumation.com/" target="_blank"><img src="images/cellumation.png" class="d-block mx-auto w-50" alt="Cellumation"></a>
           </div>
           <div class="carousel-item">
-            <img src="images/rodytrans.png" class="d-block mx-auto w-50" alt="Rodytrans">
+            <a href="https://rodytrans.es/" target="_blank"><img src="images/rodytrans.png" class="d-block mx-auto w-50" alt="Rodytrans"></a>
           </div>
           <div class="carousel-item">
-            <img src="images/rulmeca.png" class="d-block mx-auto w-50" alt="Rulmeca">
+            <a  href="https://www.rulmeca.com/es/" target="_blank"><img src="images/rulmeca.png" class="d-block mx-auto w-50" alt="Rulmeca"></a>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"  carrousel-control-color="black">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(100%);"></span>
           <span class="visually-hidden">Anterior</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" carrousel-control-color="black">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(100%);"></span>
           <span class="visually-hidden">Siguiente</span>
         </button>
       </div>
@@ -132,7 +146,7 @@
     </div>
     <div class="col-12 order-2 order-md-1">
       <div class="alert alert-primary d-flex align-items-center" style="border-radius: 5px; margin: 20px;" role="alert">
-        <svg class="bi flex-shrink-0 me-2" style="width:6vw ; min-width: 6vw; height: 6vh;  min-width: 6vw; margin-right: 2em;" role="img" aria-label="Info:"><use xlink:href="#info-fill" /></svg>
+        <svg class="bi flex-shrink-0 me-2" style="width:6vw ; min-width: 6vw; height: 7vh;  min-width: 6vw; margin-right: 2em;" role="img" aria-label="Info:"><use xlink:href="#info-fill" /></svg>
 
         <div>
           <p> A partir del 6 de noviembre de 2023, <b>Renold</b> cambia el nombre de Industrias YUK e integra ambos negocios.
@@ -152,9 +166,7 @@
   <br>
   <br>
   
-  <br><br>
-  <script src="js/script.js"></script>
-  
+  <br><br> 
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="info-fill" viewBox="0 0 16 16">
