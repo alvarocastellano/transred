@@ -58,9 +58,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item d-flex align-items-center" href="https://www.rulmeca.com/landing/rulmeca/" target="_blank">Rulmeca</a>
             <a class="dropdown-item d-flex align-items-center" href="https://www.youtube.com/@cellumation" target="_blank">Cellumation</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/connect-services/?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fammega%2F" target="_blank">Renold</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/connect-services/?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Frenold-plc%2F" target="_blank">Ammega</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/connect-services/?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Frodytrans%2F" target="_blank">Rodytrans</a>
+            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/renold-plc/" target="_blank">Renold</a>
+            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/ammega/" target="_blank">Ammega</a>
+            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/rodytrans/" target="_blank">Rodytrans</a>
 
             
           </div>
@@ -100,15 +100,35 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 order-1 order-md-2">
-      <div class="slider-container" style="width:60vw; min-width:50vw; height:30vh; min-width:20vw;">
-        <div class="slider slider1"> <!-- Agregada la clase "slider1" -->
-          <a href="https://www.renold.es/" target="_blank" class="slide" style="background-image: url('images/renold.png');"></a>
-          <a href="https://www.rulmeca.com/es/" target="_blank" class="slide" style="background-image: url('images/rulmeca.png');"></a>
-          <a href="https://rodytrans.es/" target="_blank" class="slide" style="background-image: url('images/rodytrans.png');"></a>
-          <a href="https://cellumation.com/" target="_blank" class="slide" style="background-image: url('images/cellumation.png');"></a>
-          <a href="https://www.ammega.com/" target="_blank" class="slide" style="background-image: url('images/ammega.png');"></a>
-        </div>   
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" style="margin-top:3%;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="images/ammega.png" class="d-block mx-auto w-50" alt="Ammega">
+          </div>
+          <div class="carousel-item">
+            <img src="images/renold.png" class="d-block mx-auto w-50" alt="Renold">
+          </div>
+          <div class="carousel-item">
+            <img src="images/cellumation.png" class="d-block mx-auto w-50" alt="Cellumation">
+          </div>
+          <div class="carousel-item">
+            <img src="images/rodytrans.png" class="d-block mx-auto w-50" alt="Rodytrans">
+          </div>
+          <div class="carousel-item">
+            <img src="images/rulmeca.png" class="d-block mx-auto w-50" alt="Rulmeca">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"  carrousel-control-color="black;">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" carrousel-control-color="black;">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
+      
     </div>
     <div class="col-12 order-2 order-md-1">
       <div class="alert alert-primary d-flex align-items-center" style="border-radius: 5px; margin: 20px;" role="alert">
@@ -133,7 +153,6 @@
   <br>
   
   <br><br>
-  
   <script src="js/script.js"></script>
   
 
