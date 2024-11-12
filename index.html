@@ -9,23 +9,40 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-  <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap Icons CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <title>Transred</title>
   <link rel="icon" href="images/tr (1).png" type="image/x-icon">
   <link rel="shortcut icon" href="images/tr (1).png" type="image/x-icon">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 
   <style>
     .bg-custom-gray {
       background-color: #dedede;
+    }
+
+    .small-alert {
+      display: none;
+    }
+
+    .modal-dialog {
+      max-width: 95%; /* Ampliar ancho del modal */
+    }
+
+    .alert-custom {
+      cursor: pointer;
+      background-color: #315d98; /* Azul marino oscuro */
+      color: white; /* Color de texto blanco para mejor contraste */
+      border: none;
+      margin-top:10px;
+      margin-bottom:10px;
     }
 
     @media (max-width: 576px) {
@@ -47,6 +64,26 @@
       }
     }
   </style>
+
+<script>
+  $(document).ready(function () {
+    // Mostrar modal automáticamente al cargar la página
+    $('#alertModal').modal('show');
+
+    // Mostrar el mensaje reducido y hacer que al hacer clic en él se vuelva a abrir el modal
+    $('#alertModal').on('hidden.bs.modal', function () {
+      $('.small-alert').show();
+    });
+
+    $('.small-alert').on('click', function () {
+      $('#alertModal').modal('show');
+    });
+  });
+
+  function closeModal() {
+    $('#alertModal').modal('hide');
+  }
+</script>
 
 </head>
 
@@ -162,24 +199,53 @@
       </div>
       
     </div>
-    
-    <div class="col-12 order-2 order-md-1">
-      <div class="alert alert-primary d-flex align-items-center" style="border-radius: 5px; margin: 20px;" role="alert">
-        <svg class="bi flex-shrink-0 me-2" style="width:6vw ; min-width: 6vw; height: 7vh;  min-width: 6vw; margin-right: 2em;" role="img" aria-label="Info:"><use xlink:href="#info-fill" /></svg>
 
-        <div>
-          <p>Desde el 6 de noviembre de 2023, <b>Renold</b> cambió el nombre de Industrias YUK e integró ambos negocios.
-          Gran parte de la oferta de la cadena estándar de Renold ahora se tiene en stock en Valencia y junto a toda la gama de fabricación de Yuk se consigue ampliar y mejorar nuestra oferta de servicios.</p>
-            <p> Ya disponibles los nuevos <a style="color: inherit;" target="_blank" href="https://www.rulmeca.com/es/productos_unit/catalogue/30/pallet_roller_eps/27/pallet_roller_eps/128/pallet_roller_eps"><b>PALLET ROLLER EPS</b></a>, la nueva solución de RULMECA para el movimiento de pallets en los finales de línea.
-              <br> Baje su transportador al suelo sin necesidad de fosos ni obras de ningún tipo.
-              <br> Aproveche el espacio de su cliente al máximo.
-              <br> Véalos en la <a style="color: inherit;" target="_blank" href="descargas.html"><b>zona de descargas</b></a> o póngase en contacto con nosotros pulsando <a style="color: inherit;" target="_blank" href="contacto.html"><b>aquí</b></a>.
-            </p>
-          <p><strong>Pulse en uno de los logos para ir a la página de cada empresa.</strong></p>
+  <!-- Modal de alerta -->
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="alertModalLabel">
+            <i class="fa-solid fa-ribbon"></i><strong> ACTUALIZACIÓN DE LA SITUACIÓN TRAS LAS INUNDACIONES EN VALENCIA</strong> 
+          </h5>
+          <button type="button" class="close" onclick="closeModal()" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <p>
+            Tras unos días dramáticos y gracias al <strong>esfuerzo, trabajo, valentía y solidaridad</strong> de todos nuestros compañeros, 
+            les informamos que poco a poco pero con firmeza ya están retomando la actividad nuestras empresas representadas 
+            que se vieron afectadas por las inundaciones del pasado 29 de octubre en Valencia. <br><br>
+            La seguridad personal de nuestros compañeros y de sus familias han sido prioridad para nosotros. Ellos y todas las personas afectadas, 
+            sus amigos y familiares y la comunidad valenciana en general han tenido, tienen y tendrán todo nuestro apoyo.<br>
+            Queremos expresar nuestro más profundo agradecimiento a todo nuestro equipo en Valencia por su compromiso, valentía 
+            y solidaridad con los más afectados por esta crisis. <br><br>
+            Les rogamos que <strong>sean conscientes de la gravedad de la situación</strong> y de que aunque estemos retomando la actividad en nuestras fábricas y almacenes, 
+            la infraestructura local de carreteras y comunicaciones está muy dañada en la zona, por lo que la logística durante aún 
+            algunos días o semanas puede ser más lenta de lo habitual.<br><br>
+            Ya estamos contactando directamente con los clientes que tienen pedidos pendientes para informarles de la situación 
+            y de cualquier cambio en las fechas de entrega, si los hubiera. 
+            Ya funcionan nuestros teléfonos y emails habituales y ya está operativa de nuevo la 
+            <strong><a target="_blank" href="https://b2b.renold.com/customer/account/login/referer/aHR0cHM6Ly9iMmIueXVrLmVzL2NhdGFsb2cvY2F0ZWdvcnkvdmlldy9pZC8yMzYv/?SID=dvmgg23eijsamv38tf0mp4mrad">
+              plataforma online B2B de RENOLD
+            </a></strong>
+             y tanto <strong><a target="_blank" href="https://www.ammega.com/">AMMEGA</a></strong> 
+            como <strong><a target="_blank" href="https://rodytrans.es/">RODYTRANS</a></strong> ya están enviando material a los clientes.<br>
+            Nuestros equipos de ventas e ingeniería ya están operativos al 100%, así que <strong>les rogamos que sigan enviando sus consultas y pedidos con normalidad.</strong> <br>
+            Les agradecemos de antemano su empatía y su paciencia si nuestra respuesta es más lenta de lo habitual durante este periodo de recuperación. <br><br>
+            <strong>También queremos agradecerle a todos nuestros clientes y proveedores sus mensajes de apoyo de los últimos días.</strong>
+          </p>
+          </div>
       </div>
     </div>
-
+  </div>
+  
+  <!-- Alerta pequeña visible después de cerrar el modal -->
+  <div class="alert alert-info small-alert alert-custom" role="alert">
+    <i class="fa-solid fa-ribbon"></i>
+    <strong>ACTUALIZACIÓN DE LA SITUACIÓN TRAS LAS INUNDACIONES EN VALENCIA</strong> - Ver más...
+  </div>
 
     
   </div>
