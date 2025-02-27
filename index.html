@@ -45,6 +45,38 @@
       margin-bottom:10px;
     }
 
+    .brand-square {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+.brand-square:hover {
+  transform: translateY(-15px);
+  background-color: #e0e0e0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
     @media (max-width: 576px) {
 
       .modal-dialog {
@@ -52,7 +84,7 @@
      }
 
       .carousel-item{
-        margin-top:15%;
+        margin-top:10%;
         height: 200%;
         width: 150%;
         margin-left:-25%;
@@ -130,25 +162,9 @@
             <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/renold-plc/" target="_blank">Renold</a>
             <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/ammega/" target="_blank">Ammega</a>
             <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/rodytrans/" target="_blank">Rodytrans</a>
-
-            
           </div>
         </li>
 
-        <li class="nav-item dropdown" style="margin-left: 20px;">
-          <a class="nav-link dropdown-toggle" style="font-size: 1.2em;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Redes sociales <i class="bi bi-linkedin" style="margin-left:10px;"></i>
-          </a>          
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <h5 class="dropdown-header text-wrap">Manténgase informado a través de nuestras redes sociales, sea el primero en conocer nuestras novedades donde exponemos casos de éxito.</h5>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/rulmeca/posts/?feedView=all" target="_blank">Rulmeca</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/cellumation-gmbh/posts/?feedView=all" target="_blank">Cellumation</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/showcase/renold-chain/posts/?feedView=all" target="_blank">Renold</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/ammega/posts/?feedView=all" target="_blank">Ammega</a>
-            <a class="dropdown-item d-flex align-items-center" href="https://www.linkedin.com/company/rodytrans/posts/?feedView=all" target="_blank">Rodytrans</a>
-          </div>
-        </li>
           <li class="nav-item dropdown" style="margin-left: 20px;">
             <a class="nav-link dropdown-toggle" style="font-size: 1.2em;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Contacto <i class="bi bi-telephone" style="margin-left:10px;"></i>
@@ -180,10 +196,42 @@
 </nav>
 
 <div class="container-fluid">
-  <div class="row">
+  <!-- Modal de alerta -->
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="alertModalLabel">
+          <i class="fa-solid fa-ribbon"></i><strong> ACTUALIZACIÓN DE LA SITUACIÓN TRAS LAS INUNDACIONES EN VALENCIA</strong> 
+        </h5>
+        <button type="button" class="close" onclick="closeModal()" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Debido a las graves inundaciones sufridas en Valencia el pasado mes de octubre en algunas de nuestras instalaciones productivas y 
+          a los daños y pérdidas provocadas por la mismas, los plazos de entrega pueden sufrir retraso.<br><br>
+          Estamos trabajando intensamente para minimizar los inconvenientes. Confiamos en su comprensión y 
+          en que sigan manteniendo la confianza en nosotros como hasta ahora.<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Alerta pequeña visible después de cerrar el modal -->
+<div class="alert alert-info small-alert alert-custom" role="alert">
+  <i class="fa-solid fa-ribbon"></i>
+  <strong>ACTUALIZACIÓN DE LA SITUACIÓN TRAS LAS INUNDACIONES EN VALENCIA</strong> - Ver más...
+</div>
+
+<!-- Section: Nuestras marcas -->
+<div class="container-fluid">
+  <div class="row">
     <div class="col-12 order-1 order-md-2">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <h2 class="text-center my-4 display-4 font-weight-bold" style="color:#315d98;">Nuestras marcas</h2>
+      <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <a href="https://www.ammega.com/" target="_blank"><img src="images/Ammega2.jpg" class="d-block mx-auto w-50" alt="Ammega"></a>
@@ -198,7 +246,7 @@
             <a href="https://rodytrans.es/" target="_blank"><img src="images/rodytrans.jpg" class="d-block mx-auto w-50" alt="Rodytrans"></a>
           </div>
           <div class="carousel-item">
-            <a  href="https://www.rulmeca.com/es/" target="_blank"><img src="images/rulmeca.jpg" class="d-block mx-auto w-50" alt="Rulmeca"></a>
+            <a href="https://www.rulmeca.com/es/" target="_blank"><img src="images/rulmeca.jpg" class="d-block mx-auto w-50" alt="Rulmeca"></a>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -210,53 +258,43 @@
           <span class="visually-hidden">Siguiente</span>
         </button>
       </div>
-      
     </div>
+  </div>
+</div>
 
-  <!-- Modal de alerta -->
-  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="alertModalLabel">
-            <i class="fa-solid fa-ribbon"></i><strong> ACTUALIZACIÓN DE LA SITUACIÓN TRAS LAS INUNDACIONES EN VALENCIA</strong> 
-          </h5>
-          <button type="button" class="close" onclick="closeModal()" aria-label="Cerrar">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<!-- Section: Descubre más -->
+<div class="container-fluid mt-5" style="margin-top: 40px;">
+  <div class="row">
+    <div class="col-12">
+      <hr class="my-4">
+      <h2 class="text-center my-4 display-8 font-weight-bold" style="color:#315d98;">Descubre más y mantente al día de todas las novedades a través de las redes sociales</h2>
+      <div class="d-flex justify-content-center flex-wrap">
+        <div class="brand-square col-lg-2 col-md-4 col-sm-6 col-12" onclick="window.open('https://www.linkedin.com/company/renold-plc/', '_blank')">
+          <img src="images/renold.png" alt="Renold" style="max-width: 100%; max-height: 100%;">
         </div>
-        <div class="modal-body">
-          <p>
-            Debido a las graves inundaciones sufridas en Valencia el pasado mes de octubre en algunas de nuestras instalaciones productivas y 
-            a los daños y pérdidas provocadas por la mismas, los plazos de entrega pueden sufrir retraso.<br><br>
-            Estamos trabajando intensamente para minimizar los inconvenientes. Confiamos en su comprensión y 
-            en que sigan manteniendo la confianza en nosotros como hasta ahora.<br><br>
-          </p>
-          </div>
+        <div class="brand-square col-lg-2 col-md-4 col-sm-6 col-12" onclick="window.open('https://www.linkedin.com/company/rulmeca/', '_blank')">
+          <img src="images/rulmeca_logo.png" alt="Rulmeca" style="max-width: 100%; max-height: 100%;">
+        </div>
+        <div class="brand-square col-lg-2 col-md-4 col-sm-6 col-12" onclick="window.open('https://www.linkedin.com/company/ammega/', '_blank')">
+          <img src="images/ammega_solo_logo.png" alt="Ammega" style="max-width: 100%; max-height: 100%;">
+        </div>
+        <div class="brand-square col-lg-2 col-md-4 col-sm-6 col-12" onclick="window.open('https://www.linkedin.com/company/cellumation-gmbh/', '_blank')">
+          <img src="images/cellumation_solo_logo.png" alt="Cellumation" style="max-width: 100%; max-height: 100%;">
+        </div>
+        <div class="brand-square col-lg-2 col-md-4 col-sm-6 col-12" onclick="window.open('https://www.linkedin.com/company/rodytrans/', '_blank')">
+          <img src="images/rodytrans_logo.png" alt="Rodytrans" style="max-width: 100%; max-height: 100%;">
+        </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Alerta pequeña visible después de cerrar el modal -->
-  <div class="alert alert-info small-alert alert-custom" role="alert">
-    <i class="fa-solid fa-ribbon"></i>
-    <strong>ACTUALIZACIÓN DE LA SITUACIÓN TRAS LAS INUNDACIONES EN VALENCIA</strong> - Ver más...
-  </div>
-
-    
   </div>
 </div>
 <div class="position-fixed bottom-0 end-0" style="margin-bottom: 3%; margin-right:8%; z-index: 9999;">
   <a href="https://wa.me/34678478820?text=Hola%20Abelardo,%20necesito%20información%20sobre%20" target="_blank">
-    <img src="images/social-whatsapp-circle.webp" class="img-fluid" style="width:60px; height:60px;" alt="Logo de whatsapp">
+    <img src="images/social-whatsapp-circle.webp" class="img-fluid whatsapp-icon" style="width:60px; height:60px;" alt="Logo de whatsapp">
   </a>
 </div>
 
-  <br><br>
-  <br>
-  <br>
-  
-  <br><br> 
+<br><br><br><br>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="info-fill" viewBox="0 0 16 16">
