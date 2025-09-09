@@ -36,8 +36,31 @@
     }
 
     .small-alert {
-      display: none;
+    display: flex;
+    align-items: center; /* centra verticalmente el icono con el texto */
+  }
+
+  /* Icono a la izquierda, sin que afecte al texto */
+  .small-alert .animated-icon {
+    margin-right: 10px; /* espacio entre icono y texto */
+    flex-shrink: 0;     /* evita que el icono se reduzca en móviles */
+  }
+
+  /* Texto a la derecha, ocupa todo el espacio disponible */
+  .small-alert strong {
+    display: block;
+  }
+
+  /* Opcional: ajustar tamaño de texto en móviles */
+  @media (max-width: 767px) {
+    .small-alert {
+      font-size: 0.95rem;
     }
+
+    .small-alert .animated-icon {
+      font-size: 1.5rem; /* icono un poco más grande en móviles */
+    }
+  }
 
     .modal-dialog {
       max-width: 50%; /* Ampliar ancho del modal */
@@ -46,6 +69,15 @@
     .alert-custom {
       cursor: pointer;
       background-color: #315d98; /* Azul marino oscuro */
+      color: white; /* Color de texto blanco para mejor contraste */
+      border: none;
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+
+    .alert-custom:hover {
+      cursor: pointer;
+      background-color: #152841; /* Azul marino oscuro */
       color: white; /* Color de texto blanco para mejor contraste */
       border: none;
       margin-top:10px;
@@ -87,7 +119,8 @@
     @media (max-width: 576px) {
 
       .modal-dialog {
-      max-width: 90%; /* Ampliar ancho del modal */
+      max-width: 95%; /* Ampliar ancho del modal */
+      overflow-y: auto;
      }
 
       .carousel-item{
@@ -106,6 +139,24 @@
         margin-top:20%;
       }
     }
+
+    @keyframes bounceIcon {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .animated-icon {
+    color: #ffffff;
+    cursor: pointer;
+    animation: bounceIcon 1.2s infinite;
+    transition: transform 0.2s ease;
+  }
+
+  
   </style>
 
 <script>
@@ -229,15 +280,18 @@
           Si aún no ha explorado la nueva gama SDss, ahora es el momento.<br>
           📞 Póngase en contacto conmigo <a href="https://linktr.ee/abelardocastellano" target="_blank" >https://linktr.ee/abelardocastellano</a>
         </p>
+        <video id="promoVideo" width="300" height="190" loop style="display: block; margin: 10px auto; border-radius: 8px;">
+          <source src="images/video_SDss_Renold.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de vídeo.
+        </video>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Alerta pequeña visible después de cerrar el modal -->
 <div class="alert alert-info small-alert alert-custom" role="alert">
-  <i class="fa fa-info-circle"></i>
-  <strong>Conoce nuestra reciente gama mejorada de cadenas INOX</strong> - Ver más...
+  <i class="fa fa-info-circle animated-icon"></i>
+  <strong>Conoce nuestra reciente gama mejorada de cadenas INOX</strong>
 </div>
 
 <!-- Section: Nuestras marcas -->
@@ -308,6 +362,29 @@
   </a>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById('alertModal');
+    const video = document.getElementById('promoVideo');
+
+    // Cuando se abre el modal
+    $('#alertModal').on('shown.bs.modal', function () {
+      video.currentTime = 0;  // reinicia
+      video.muted = false;    // aseguramos que NO esté muteado
+      video.play().catch(err => {
+        console.log("Autoplay con sonido bloqueado por el navegador:", err);
+      });
+    });
+
+    // Cuando se cierra el modal
+    $('#alertModal').on('hidden.bs.modal', function () {
+      video.pause();
+      video.currentTime = 0; // vuelve al inicio
+    });
+  });
+</script>
+
+
 <br><br><br><br>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -316,6 +393,10 @@
         </symbol>
     </svg>
 
-    
+<!-- Footer -->
+<footer class="text-gray text-center py-3 mt-10 w-100" style="position: relative;">
+  © 2025 <a href="https://novaira.es/" target="_blank">Novaira</a><br> Todos los derechos reservados.
+</footer>
+
 </body>
 </html>
