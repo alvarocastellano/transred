@@ -284,6 +284,14 @@
           <source src="images/video_SDss_Renold.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de vídeo.
         </video>
+        <button id="soundToggle" 
+            style="position: absolute; bottom: 10px; right: 10px; 
+                   border: none; background: rgba(0, 0, 0, 0.594); color: white;
+                   cursor: pointer; font-size: 20px; border-radius: 50%; 
+                   width: 40px; height: 40px; display: flex; 
+                   align-items: center; justify-content: center;">
+            🔇
+          </button>
       </div>
     </div>
   </div>
@@ -364,24 +372,41 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById('alertModal');
-    const video = document.getElementById('promoVideo');
+  const video = document.getElementById('promoVideo');
+  const soundToggle = document.getElementById('soundToggle');
 
-    // Cuando se abre el modal
-    $('#alertModal').on('shown.bs.modal', function () {
-      video.currentTime = 0;  // reinicia
-      video.muted = false;    // aseguramos que NO esté muteado
-      video.play().catch(err => {
-        console.log("Autoplay con sonido bloqueado por el navegador:", err);
-      });
-    });
+  // Mostrar modal automáticamente
+  $('#alertModal').modal('show');
 
-    // Cuando se cierra el modal
-    $('#alertModal').on('hidden.bs.modal', function () {
-      video.pause();
-      video.currentTime = 0; // vuelve al inicio
-    });
+  // Reproducir video al abrir modal
+  $('#alertModal').on('shown.bs.modal', function () {
+    video.currentTime = 0;
+    if (!video.hasPlayed) {
+      video.muted = true;
+      video.play().then(() => { video.hasPlayed = true; }).catch(err => console.log(err));
+    } else {
+      video.muted = false;
+      video.play().catch(err => console.log(err));
+    }
   });
+
+  // Pausar video al cerrar modal
+  $('#alertModal').on('hidden.bs.modal', function () {
+    video.pause();
+    video.currentTime = 0;
+  });
+
+  // Toggle sonido al pulsar botón
+  soundToggle.addEventListener('click', () => {
+    video.muted = !video.muted;
+    soundToggle.textContent = video.muted ? '🔇' : '🔊';
+    if (!video.muted && video.paused) {
+      video.play().catch(err => console.log(err));
+    }
+  });
+});
+
+
 </script>
 
 
