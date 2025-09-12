@@ -51,6 +51,12 @@
     display: block;
   }
 
+  @media (max-width: 768px) {
+    .navbar-nav .dropdown-menu {
+      margin-right: 20px !important;
+    }
+  }
+
   /* Opcional: ajustar tamaño de texto en móviles */
   @media (max-width: 767px) {
     .small-alert {
@@ -189,7 +195,7 @@
       <img src="images/transred_recortada.png" width="180px" height="50px" alt="Logo Transred">
     </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -280,7 +286,8 @@
           Si aún no ha explorado la nueva gama SDss, ahora es el momento.<br>
           📞 Póngase en contacto conmigo <a href="https://linktr.ee/abelardocastellano" target="_blank" >https://linktr.ee/abelardocastellano</a>
         </p>
-        <video id="promoVideo" width="300" height="190" loop style="display: block; margin: 10px auto; border-radius: 8px;">
+        <video id="promoVideo" width="300" height="190" loop autoplay muted playsinline 
+              style="display: block; margin: 10px auto; border-radius: 8px;">
           <source src="images/video_SDss_Renold.mp4" type="video/mp4">
           Tu navegador no soporta la reproducción de vídeo.
         </video>
@@ -364,7 +371,7 @@
     </div>
   </div>
 </div>
-<div class="position-fixed bottom-0 end-0" style="margin-bottom: 3%; margin-right:8%; z-index: 9999;">
+<div class="position-fixed bottom-0 end-0" style="margin-bottom: 3%; margin-right:8%; z-index: 99;">
   <a href="https://wa.me/34678478820?text=Hola%20Abelardo,%20necesito%20información%20sobre%20" target="_blank">
     <img src="images/social-whatsapp-circle.webp" class="img-fluid whatsapp-icon" style="width:60px; height:60px;" alt="Logo de whatsapp">
   </a>
