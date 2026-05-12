@@ -123,35 +123,55 @@
   
     </div>
     <br>
-    
     <form action="https://formsubmit.co/abelardocastellano@gmail.com" method="POST">
       <div class="container">
         
-          <div class="col-md-6 mx-auto mb-3">
-            <h3>FORMULARIO DE CONTACTO</h3>
-            <br>
-            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-            <input type="text" name="Nombre" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y apellidos">
-          </div>
-          
-          <div class="col-md-6 mx-auto mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="mail@ejemplo.com">
-          </div>
-
-          <div class="col-md-6 mx-auto mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Asunto</label>
-            <input type="text" name="Asunto" class="form-control" id="exampleFormControlInput1" placeholder="Presupuesto, oferta, otro asunto">
-          </div>
-
-          <div class="col-md-6 mx-auto mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-            <textarea class="form-control" name="Descripcion" id="exampleFormControlTextarea1" rows="5" placeholder="Comente aquí lo necesario"></textarea>
-          </div>
-          <div class="col-md-12 text-center mb-3">
-            <button type="submit" class="btn btn-outline-primary" style="height: 20%; width: 25%;">Enviar</button>
-          </div>
+        <div class="col-md-6 mx-auto mb-3">
+          <h3>FORMULARIO DE CONTACTO</h3>
+          <br>
+          <label class="form-label">
+            Nombre <span style="color:red">*</span>
+          </label>
+          <input type="text" name="Nombre" class="form-control" placeholder="Nombre y apellidos" required>
         </div>
+        
+        <div class="col-md-6 mx-auto mb-3">
+          <label class="form-label">
+            Email <span style="color:red">*</span>
+          </label>
+          <input type="email" name="email" class="form-control" placeholder="mail@ejemplo.com" required>
+        </div>
+
+        <div class="col-md-6 mx-auto mb-3">
+          <label class="form-label">
+            Teléfono de contacto <span style="color:red">*</span>
+          </label>
+          <input type="tel" name="phone" class="form-control" placeholder="699999999" required>
+        </div>
+
+        <div class="col-md-6 mx-auto mb-3">
+          <label class="form-label">
+            Asunto <span style="color:red">*</span>
+          </label>
+          <input type="text" name="Asunto" class="form-control" placeholder="Presupuesto, oferta, otro asunto" required>
+        </div>
+
+        <div class="col-md-6 mx-auto mb-3">
+          <label class="form-label">
+            Descripción <span style="color:red">*</span>
+          </label>
+          <textarea class="form-control" name="Descripcion" rows="5" placeholder="Comente aquí lo necesario" required></textarea>
+        </div>
+
+        <div class="col-md-12 text-center mb-3">
+          <button type="submit" class="btn btn-outline-primary" style="height: 20%; width: 25%;">
+            Enviar
+          </button>
+        </div>
+
+        
+
+      </div>
     </form>
     
     
